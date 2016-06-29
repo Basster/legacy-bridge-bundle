@@ -13,9 +13,6 @@ class LegacyRouteLoader extends Loader
     /** @var bool */
     private $loaded = false;
 
-    /** @var  string */
-    private $legacyPath;
-
     /**
      * @var \Symfony\Component\Finder\Finder
      */
@@ -30,8 +27,6 @@ class LegacyRouteLoader extends Loader
      */
     public function __construct($legacyPath, Finder $finder = null)
     {
-        $this->legacyPath = $legacyPath;
-
         $this->finder = $finder ?: new Finder();
         $this->finder->ignoreDotFiles(true)
                      ->files()
