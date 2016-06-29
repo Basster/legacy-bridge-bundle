@@ -1,0 +1,7 @@
+rules:
+  symfony.use_super_globals:
+    enabled: false
+  symfony.dependency_injection.no_container_as_parameter:
+    enabled: false
+  symfony.controller.non_action_public_method_in_controller_class:
+    enabled: false

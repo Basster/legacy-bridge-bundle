@@ -5,6 +5,13 @@ BassterLegacyBridgeBundle
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/?branch=master)
 
+What is this?
+-------------
+
+This bundle generates a symfony route from each .php file on the given `legacy_path` folder, so you can access your old scripts through the symfony frontcontroller as they where actually present.
+Additionally the wrapper injects the symfony DI-Container into `$_SERVER['SYMFONY_CONTAINER']`, so you can slowly refactor the legacy app, by extracting services into symfony services but
+use them in the legacy code, as well.
+
 Inspired from: https://slidr.io/derrabus/modernisieren-mit-symfony (in german)
 
 Installation
@@ -22,7 +29,14 @@ In your config.yml place:
         prepend_script: '/full/path/to/my/legacy/autoPrependFile.php' # can be ommited
         # optional append script (see http://php.net/manual/en/ini.core.php#ini.auto-append-file)
         append_script:  '/full/path/to/my/legacy/autoAppendFile.php' # can be ommited
-    
+
+On the legacy app
+-----------------
+
+    <?php // e.g. my-old-stuff.php
+    /** @var \Symfony\Component\DependencyInjection\ContainerInterface $container */
+    $container = $_SERVER['SYMFONY_CONTAINER'];
+    $myService = $container->get('my.service.id');
 
 License
 -------
