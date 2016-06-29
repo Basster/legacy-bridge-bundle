@@ -1,7 +1,7 @@
 BassterLegacyBridgeBundle
 =========================
 
-[![Build Status](https://travis-ci.org/Basster/legacy-bridge-bundle.svg?branch=master)](https://travis-ci.org/Basster/legacy-bridge-bundle)
+[![Build Status](https://travis-ci.org/Basster/legacy-bridge-bundle.svg?branch=master)](https://travis-ci.org/Basster/legacy-bridge-bundle)[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/?branch=master)[![Code Coverage](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/?branch=master)
 
 Inspired from: https://slidr.io/derrabus/modernisieren-mit-symfony (in german)
 
