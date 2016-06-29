@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://symfony.com/schema/dic/services"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="basster_legacy_bridge.routing_loader" class="Basster\LegacyBridgeBundle\Routing\LegacyRouteLoader">
+            <argument>%basster_legacy_bridge.legacy_path%</argument>
+            <tag name="routing.loader"/>
+        </service>
+        <service id="basster_legacy_bridge.legacy_controller"
+                 class="Basster\LegacyBridgeBundle\Controller\LegacyScriptController">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+            <call method="setPrependScript">
+                <argument>%basster_legacy_bridge.prepend_script%</argument>
+            </call>
+            <call method="setAppendScript">
+                <argument>%basster_legacy_bridge.append_script%</argument>
+            </call>
+        </service>
+    </services>
+</container>

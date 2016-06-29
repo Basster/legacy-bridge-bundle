@@ -1,0 +1,24 @@
+{
+  "name": "basster/legacy-bridge-bundle",
+  "type": "symfony-bundle",
+  "description": "Bridge Bundle for wrapping legacy php projects (e.g. without frontcontrollers) into a symfony application.",
+  "require": {
+    "symfony/framework-bundle": "~2.3|~3.0"
+  },
+  "require-dev": {
+    "mikey179/vfsStream": "^1.6"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ole Rößner",
+      "email": "oroessner@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Basster\\LegacyBridgeBundle\\": ""
+    }
+  }
+}
