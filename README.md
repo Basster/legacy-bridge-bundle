@@ -1,6 +1,8 @@
 BassterLegacyBridgeBundle
 =========================
 
+[![Build Status](https://travis-ci.org/Basster/legacy-bridge-bundle.svg?branch=master)](https://travis-ci.org/Basster/legacy-bridge-bundle)
+
 Inspired from: https://slidr.io/derrabus/modernisieren-mit-symfony (in german)
 
 Installation
