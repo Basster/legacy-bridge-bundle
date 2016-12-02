@@ -12,7 +12,8 @@ This bundle generates a symfony route from each .php file on the given `legacy_p
 Additionally the wrapper injects the symfony DI-Container into `$_SERVER['SYMFONY_CONTAINER']`, so you can slowly refactor the legacy app, by extracting services into symfony services but
 use them in the legacy code, as well.
 
-Inspired from: https://slidr.io/derrabus/modernisieren-mit-symfony (in german)
+Inspired from (Modernizing with Symfony
+)[https://slidr.io/derrabus/modernizing-with-symfony] given by [@derrabus](https://twitter.com/derrabus) 
 
 Installation
 ------------
