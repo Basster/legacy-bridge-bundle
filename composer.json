@@ -6,7 +6,8 @@
     "symfony/framework-bundle": "~2.3|~3.0"
   },
   "require-dev": {
-    "mikey179/vfsStream": "^1.6"
+    "mikey179/vfsStream": "^1.6",
+    "phpunit/phpunit": "^5.7"
   },
   "license": "MIT",
   "authors": [
