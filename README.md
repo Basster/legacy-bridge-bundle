@@ -4,6 +4,7 @@ BassterLegacyBridgeBundle
 [![Build Status](https://travis-ci.org/Basster/legacy-bridge-bundle.svg?branch=master)](https://travis-ci.org/Basster/legacy-bridge-bundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Basster/legacy-bridge-bundle/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/8a657229-69dc-4244-9669-dfcea4b32f59/mini.png)](https://insight.sensiolabs.com/projects/8a657229-69dc-4244-9669-dfcea4b32f59)
 
 What is this?
 -------------
