@@ -3,7 +3,7 @@ language: php
 before_script:
   - composer update --prefer-source -o
 
-script: phpunit
+script: vendor/bin/phpunit -c phpunit.xml.dist
 
 php:
   - 5.3
