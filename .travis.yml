@@ -1,14 +1,38 @@
 language: php
 
+cache:
+  directories:
+  - $HOME/.composer/cache/files
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 5.4
+      dist: precise
+    - php: 5.5
+      env: SYMFONY_VERSION='~2.8.0'
+    - php: 5.5
+      env: SYMFONY_VERSION='~3.0.0'
+    - php: 5.6
+      env: SYMFONY_VERSION='~2.8.0'
+    - php: 5.6
+      env: SYMFONY_VERSION='~3.0.0'
+    - php: 5.6
+      env: SYMFONY_VERSION='~3.4.0'
+    - php: 7.0
+      env: SYMFONY_VERSION='~3.4.0'
+    - php: 7.1
+      env: SYMFONY_VERSION='~3.4.0'
+    - php: 7.1
+      env: SYMFONY_VERSION='~4.0'
+    - php: 7.2
+      env: SYMFONY_VERSION='~3.4.0'
+    - php: 7.2
+      env: SYMFONY_VERSION='~4.0'
+
 before_script:
-  - composer update --prefer-source -o
+  - phpenv config-add travis.php.ini
+  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony=$SYMFONY_VERSION; fi
+  - composer update --prefer-source -o --no-interaction
 
 script: vendor/bin/phpunit -c phpunit.xml.dist
-
-php:
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - 7.1
