@@ -3,7 +3,7 @@
   "type": "symfony-bundle",
   "description": "Bridge Bundle for wrapping legacy php projects (e.g. without frontcontrollers) into a symfony application.",
   "require": {
-    "symfony/framework-bundle": "~2.3|~3.0"
+    "symfony/framework-bundle": "~2.3|~3.0|~4.0"
   },
   "require-dev": {
     "mikey179/vfsStream": "^1.6",
