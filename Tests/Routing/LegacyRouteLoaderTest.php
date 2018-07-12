@@ -14,6 +14,9 @@ class LegacyRouteLoaderTest extends \PHPUnit_Framework_TestCase
     /** @var  LegacyRouteLoader */
     private $routeLoader;
 
+    /** @var \org\bovigo\vfs\vfsStreamDirectory */
+    private $root;
+
     /**
      * @test
      */
@@ -45,6 +48,26 @@ class LegacyRouteLoaderTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function dontSupportWhenPathIsNotExisting()
+    {
+        $this->routeLoader = new LegacyRouteLoader(__DIR__.'/not_existing');
+        self::assertFalse($this->routeLoader->supports('any', 'legacy'));
+    }
+
+    /**
+     * @test
+     */
+    public function dontSupportWhenPathIsNotReadable()
+    {
+        $dir = vfsStream::newDirectory('legacy', 0000)->at($this->root);
+
+        $this->routeLoader = new LegacyRouteLoader($dir->url());
+        self::assertFalse($this->routeLoader->supports('any', 'legacy'));
+    }
+
+    /**
+     * @test
+     */
     public function supportsLegacyType()
     {
         self::assertTrue(
@@ -55,8 +78,8 @@ class LegacyRouteLoaderTest extends \PHPUnit_Framework_TestCase
     /** {@inheritdoc} */
     protected function setUp()
     {
-        $root              = vfsStream::setup();
-        $this->legacyFile  = vfsStream::newFile('hello.php')->at($root);
-        $this->routeLoader = new LegacyRouteLoader($root->url());
+        $this->root       = vfsStream::setup();
+        $this->legacyFile  = vfsStream::newFile('hello.php')->at($this->root);
+        $this->routeLoader = new LegacyRouteLoader($this->root->url());
     }
 }
