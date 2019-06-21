@@ -15,9 +15,11 @@ class Configuration implements ConfigurationInterface
     /** {@inheritdoc} */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('basster_legacy_bridge');
-
+        $treeBuilder = new TreeBuilder('basster_legacy_bridge');
+        $rootNode = method_exists($treeBuilder, 'getRootNode') 
+            ? $treeBuilder->getRootNode() 
+            : $treeBuilder->root('basster_legacy_bridge');
+        
         $rootNode
           ->children()
           ->scalarNode('legacy_path')
