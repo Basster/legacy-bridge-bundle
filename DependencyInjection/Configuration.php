@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder('basster_legacy_bridge');
         $rootNode = method_exists($treeBuilder, 'getRootNode') 
             ? $treeBuilder->getRootNode() 
-            : $treeBuilder->root('monolog');
+            : $treeBuilder->root('basster_legacy_bridge');
         
         $rootNode
           ->children()
